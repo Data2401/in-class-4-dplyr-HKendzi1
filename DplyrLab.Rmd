@@ -29,13 +29,18 @@ Now, change this to see the same plot for the Droids.
 
 ```{r}
 
+#droids <- starwars %>% filter(species == "Droids")
+#plot(droids$height, droids$mass)
 
+#starwars %>% filter(species == "Droids") %>% plot(mass ~ height, data = .)
 ```
 
 
 How many characters are from each planet?
 
 ```{r}
+#species<- starwars %>% 
+#plot(species, homeworld)
 
 
 
@@ -50,7 +55,7 @@ If you wanted to arrange this in descending order, what would you add to the pip
 Find the average height for each eye color.
 
 ```{r}
-
+#mean(height, eye_color)
 
 ```
 
@@ -58,6 +63,9 @@ What's with the NAs? Filter down to just brown eyes find out.
 
 
 ```{r}
+#mean(height, eye_color)
+#filter(starwars, eye_color= 'Brown')
+
 ```
 
 Okay, so we have missing data here. Try summarising with `na.omit(height)` instead of just `height` or adding `na.rm = T` to the mean function inside summarize. 
@@ -72,6 +80,7 @@ So, who is the tallest male? How many blue eyed women are there? How many gender
 
 
 ```{r}
+#filter(starwars, sex= 'male', max(height))
 
 ```
 
